@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security</title>
+    <link rel="icon" href="./assets/bg remove.webp">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./root.css">
+
+    <!-- material icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- aos animations -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <a class="logo" href="index.html">
+                <img src="./assets/orange.webp" alt="logo" width="150px">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="sign.html" class="btn-secondary login">Login</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="sign.html" class="btn-primary login">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <main>
+
+        <section class="hero-slider">
+            <div class="premium-hero active" id="slide-1">
+                <div class="hero-container">
+                    <div class="hero-text-content">
+                        <h1 class="hero-display-title">
+                            Organizations <br>
+                            with <span class="highlight">Critical Infrastructure</span>
+                        </h1>
+                        <div class="red-divider"></div>
+                        <p class="hero-lead-text">
+                            Aenean vel placerat eros. Suspendisse viverra orci orci, vitae molestie velit rutrum ac.
+                            Proin imperdiet metus venenatis magna vehicul.
+                        </p>
+                        <button class="btn-primary">Discover More</button>
+                    </div>
+
+                    <div class="hero-visual-wrapper">
+                        <div class="deco-circle"></div>
+                        <div class="floating-icons">
+                            <div class="icon-circle"><i class="fas fa-user-secret"></i></div>
+                            <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
+                            <div class="icon-circle"><i class="fas fa-mobile-alt"></i></div>
+                        </div>
+                        <div class="main-illustration">
+                            <img src="./assets/hero 1.webp" alt="Infrastructure Security">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="premium-hero" id="slide-2">
+                <div class="hero-container">
+                    <div class="hero-text-content">
+                        <h1 class="hero-display-title">
+                            Advanced <br>
+                            Threat <span class="highlight">Detection Systems</span>
+                        </h1>
+                        <div class="red-divider"></div>
+                        <p class="hero-lead-text">
+                            Real-time monitoring and AI-driven response protocols to protect your
+                            digital assets from sophisticated zero-day vulnerabilities.
+                        </p>
+                        <button class="btn-primary">Explore Defense</button>
+                    </div>
+
+                    <div class="hero-visual-wrapper">
+                        <div class="deco-circle"></div>
+                        <div class="floating-icons">
+                            <div class="icon-circle"><i class="fas fa-microchip"></i></div>
+                            <div class="icon-circle"><i class="fas fa-network-wired"></i></div>
+                            <div class="icon-circle"><i class="fas fa-lock"></i></div>
+                        </div>
+                        <div class="main-illustration">
+                            <img src="./assets/hero 2.webp" alt="Threat Detection">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <section class="partners-section">
+            <div class="container">
+                <div class="ticker-header">
+                    <span class="section-subtitle">Global Network</span>
+                    <p>Integrated with Industry Leaders</p>
+                    <div class="red-divider"></div>
+
+                </div>
+
+                <div class="logo-ticker">
+                    <div class="ticker-track">
+                        <div class="logo-item"><span>FORTRESS</span></div>
+                        <div class="logo-item"><span>QUANTUM</span></div>
+                        <div class="logo-item"><span>CORE-SYS</span></div>
+                        <div class="logo-item"><span>NEURAL-LINK</span></div>
+                        <div class="logo-item"><span>SENTINEL</span></div>
+                        <div class="logo-item"><span>FORTRESS</span></div>
+                        <div class="logo-item"><span>QUANTUM</span></div>
+                        <div class="logo-item"><span>CORE-SYS</span></div>
+                        <div class="logo-item"><span>NEURAL-LINK</span></div>
+                        <div class="logo-item"><span>SENTINEL</span></div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <div class="case-content">
+                        <div class="badge-red">Case Study #042</div>
+                        <h3>Global Banking Infrastructure <span class="highlight">Hardening</span></h3>
+                        <p>"The transition to CyberShield's neural defense reduced our breach attempts by 94% within the
+                            first 48 hours of deployment."</p>
+                        <div class="client-info">
+                            <strong>Marcus Thorne</strong>
+                            <span>CTO, Global Finance Corp</span>
+                        </div>
+                    </div>
+                    <div class="case-visual">
+                        <div class="stats-circle">
+                            <span class="pct">94%</span>
+                            <span class="label">Reduction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Core Protection</span>
+                    <h2 class="section-title">Our Security <span class="highlight">Intelligence</span></h2>
+                    <div class="red-divider"></div>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box"><i class="fas fa-user-shield"></i></div>
+                        <h3>Identity Protection</h3>
+                        <p>Advanced biometric and multi-factor authentication protocols to secure user access points.
+                        </p>
+                        <a href="#" class="learn-more">Analyze Layer <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box"><i class="fas fa-network-wired"></i></div>
+                        <h3>Network Surveillance</h3>
+                        <p>24/7 packet inspection and AI-driven anomaly detection across your entire cloud architecture.
+                        </p>
+                        <a href="#" class="learn-more">Analyze Layer <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-glow"></div>
+                        <div class="icon-box"><i class="fas fa-code-branch"></i></div>
+                        <h3>Zero-Day Defense</h3>
+                        <p>Proactive vulnerability patching and sandbox testing for emerging global digital threats.</p>
+                        <a href="#" class="learn-more">Analyze Layer <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-biohazard"></i></div>
+                    <h2 class="counter" data-target="4500">0</h2>
+                    <p>Threats Blocked Daily</p>
+                    <div class="stat-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h2 class="counter" data-target="99">0</h2>
+                    <span>%</span>
+                    <p>Detection Accuracy</p>
+                    <div class="stat-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+                    <h2 class="counter" data-target="1200">0</h2>
+                    <p>Enterprise Clients</p>
+                    <div class="stat-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <h2 class="counter" data-target="24">0</h2>
+                    <span>/7</span>
+                    <p>Global Surveillance</p>
+                    <div class="stat-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section class="tech-section">
+            <div class="container tech-grid">
+                <img src="./assets/layer.webp" alt="" width="800px" height="500px">
+
+                <div class="tech-content">
+                    <span class="section-subtitle">Infrastructure Layers</span>
+                    <h2 class="section-title">Multi-Layered <span class="highlight">Defense</span></h2>
+                    <div class="red-divider"></div>
+
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-num">01</div>
+                            <div class="feature-text">
+                                <h3>Neural Threat Analysis</h3>
+                                <p>Our AI engines process over 5TB of global traffic data every second to identify
+                                    patterns of zero-day exploits.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-num">02</div>
+                            <div class="feature-text">
+                                <h3>Encrypted Tunneling</h3>
+                                <p>Military-grade end-to-end encryption protocols ensuring that data remains invisible
+                                    even if intercepted.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-num">03</div>
+                            <div class="feature-text">
+                                <h3>Automated Kill-Switch</h3>
+                                <p>Instant isolation of compromised nodes to prevent lateral movement of malware within
+                                    your network.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section class="team-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Expert Council</span>
+                    <h2 class="section-title">Elite <span class="highlight">Operators</span></h2>
+                    <div class="red-divider"></div>
+                </div>
+
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="member-image">
+                            <div class="scan-line"></div>
+                            <img src="member1.jpg" alt="Security Architect">
+                            <div class="member-socials">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Viktor Vance</h3>
+                            <span class="member-role">Lead Neural Architect</span>
+                            <p class="member-bio">Specializing in AI-driven threat neutralization and encrypted node
+                                mapping.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="member-image">
+                            <div class="scan-line"></div>
+                            <img src="member2.jpg" alt="Penetration Tester">
+                            <div class="member-socials">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Sarah Connor</h3>
+                            <span class="member-role">Senior Penetration Tester</span>
+                            <p class="member-bio">Expert in Red-Teaming and zero-day vulnerability discovery for global
+                                banking.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="member-image">
+                            <div class="scan-line"></div>
+                            <img src="member3.jpg" alt="Cryptographer">
+                            <div class="member-socials">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-discord"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Dr. Aris Thorne</h3>
+                            <span class="member-role">Chief Cryptographer</span>
+                            <p class="member-bio">Pioneer in post-quantum encryption protocols and decentralized data
+                                security.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="member-image">
+                            <div class="scan-line"></div>
+                            <img src="member4.jpg" alt="Incident Responder">
+                            <div class="member-socials">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Elena Rossi</h3>
+                            <span class="member-role">Incident Response Lead</span>
+                            <p class="member-bio">Managing 24/7 global surveillance and automated containment
+                                strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="threat-monitor">
+            <div class="container monitor-grid">
+                <div class="monitor-visual">
+                    <div class="radar-circle"></div>
+                    <div class="map-container">
+                        <i class="fas fa-globe-americas"></i>
+                        <div class="pulse-point p1"></div>
+                        <div class="pulse-point p2"></div>
+                        <div class="pulse-point p3"></div>
+                    </div>
+                    <div class="scanning-bar"></div>
+                </div>
+
+                <div class="monitor-console">
+                    <span class="section-subtitle">Real-Time Intelligence</span>
+                    <h2 class="section-title">Active <span class="highlight">Threat Monitor</span></h2>
+                    <div class="red-divider"></div>
+
+                    <div class="console-box">
+                        <div class="console-header">
+                            <span class="dot-red"></span> LIVE_FEED_v4.2
+                        </div>
+                        <div class="console-body" id="console-feed">
+                            <p class="log-line">> Initializing packet inspection...</p>
+                            <p class="log-line">> Node 14.22.10.1 SECURE</p>
+                        </div>
+                    </div>
+                    <button class="btn-primary" style="margin-top: 2rem;">Access Full Logs</button>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section class="dossier-testimonial">
+            <div class="container dossier-grid">
+                <div class="dossier-main">
+                    <span class="section-subtitle">Intelligence Feedback</span>
+                    <div class="quote-wrapper">
+                        <i class="fas fa-terminal quote-icon"></i>
+                        <h2 id="active-quote" class="glitch-text">
+                            "The neural-link integration has reduced our lateral movement threats to zero within the
+                            first quarter."
+                        </h2>
+                        <div class="red-divider"></div>
+                        <div class="client-meta">
+                            <h4 id="active-name">Marcus Thorne</h4>
+                            <p id="active-role">Chief Technology Officer, Global Bank</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dossier-selector">
+                    <div class="selector-item active" data-index="0">
+                        <div class="mini-avatar">MT</div>
+                        <div class="mini-info">
+                            <span>Marcus Thorne</span>
+                            <small>Global Bank</small>
+                        </div>
+                    </div>
+                    <div class="selector-item" data-index="1">
+                        <div class="mini-avatar">SC</div>
+                        <div class="mini-info">
+                            <span>Sarah Chen</span>
+                            <small>TechFlow Systems</small>
+                        </div>
+                    </div>
+                    <div class="selector-item" data-index="2">
+                        <div class="mini-avatar">DR</div>
+                        <div class="mini-info">
+                            <span>David Ross</span>
+                            <small>SecureCloud Inc</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Information Center</span>
+                    <h2 class="section-title">Common <span class="highlight">Inquiries</span></h2>
+                    <div class="red-divider"></div>
+                </div>
+
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How does the Neural-Link defense differ from standard firewalls?</span>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Standard firewalls rely on known signature databases. Our Neural-Link system uses
+                                behavioral AI to identify "Zero-Day" patterns in real-time, neutralizing threats that
+                                haven't even been categorized yet.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is the deployment process disruptive to our current uptime?</span>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No. We utilize a "Shadow-Integration" phase where our sensors run parallel to your
+                                existing stack. We only switch to active protection once the neural mapping is 100%
+                                verified.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Does CyberShield comply with GDPR and HIPAA regulations?</span>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. Our infrastructure is built on "Privacy-by-Design" principles, ensuring all
+                                data handling meets or exceeds global compliance standards including GDPR, HIPAA, and
+                                SOC2.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <section class="cta-section">
+            <div class="mesh-background"></div>
+            <div class="container cta-grid">
+                <div class="cta-content">
+                    <span class="section-subtitle">Take Control</span>
+                    <h2 class="section-title">Ready to <span class="highlight">Harden</span> Your Infrastructure?</h2>
+                    <p class="hero-lead-text">
+                        Join 1,200+ global enterprises that trust our neural-link defense systems.
+                        Schedule a professional vulnerability assessment today.
+                    </p>
+
+                    <div class="cta-btns">
+                        <button class="btn-primary">Request Free Audit</button>
+                        <button class="btn-secondary">Speak to an Architect</button>
+                    </div>
+                </div>
+
+                <div class="cta-badge-wrapper">
+                    <div class="trust-badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>ISO 27001 <br> Certified</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-user-check"></i>
+                        <span>SOC2 Type II <br> Compliant</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <a class="logo" href="index.html">
+                    <img src="./assets/orange.webp" alt="logo" width="150px">
+                </a>
+                <p class="footer-desc">
+                    Defending global digital frontiers with next-generation neural encryption and real-time threat
+                    neutralization.
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="sign.html">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Knowledge</h4>
+                <ul class="footer-links">
+                    <li><a href="./404..html">Security Blog</a></li>
+                    <li><a href="./404..html">Whitepapers</a></li>
+                    <li><a href="./404..html">API Documentation</a></li>
+                    <li><a href="./404..html">Compliance Center</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Threat Alerts</h4>
+                <p class="footer-desc">Receive real-time intelligence reports.</p>
+                <form class="footer-form" action="./404..html" method="GET">
+                    <input type="email" placeholder="Terminal@Email.com" class="footer-input" required>
+                    <button type="submit" class="btn-primary">Connect</button>
+                </form>
+            </div>
+
+
+            <div class="footer-bottom">
+                <h4 class="footer-title">Social Links</h4>
+
+                <div class="footer-socials">
+                    <a href="./404..html"><i class="fab fa-linkedin"></i></a>
+                    <a href="./404..html"><i class="fab fa-twitter"></i></a>
+                    <a href="./404..html"><i class="fab fa-github"></i></a>
+                    <a href="./404..html"><i class="fab fa-instagram"></i></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container bottom-flex">
+            <p>&copy; 2026 CYBERSHIIELD DEFENSE. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 900,
+            easing: 'ease-in-out',
+            once: true,
+        });
+
+        // data-aos="fade-up"
+        // fade-up, fade-down, fade-left, fade-right, zoom-in,	slide-up, flip-left	
+
+    </script>
+
+
+
+
+</body>
+
+</html>
