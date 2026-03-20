@@ -6,7 +6,6 @@
     --primary-glow: rgba(244, 51, 52, 0.35);
     --primary-muted: rgb(150, 30, 30);
 
-    /* Background & Surfaces */
     --bg-black: rgb(18, 18, 18);
     --surface-dark: rgb(32, 32, 32);
     --surface-light: rgb(45, 45, 45);
@@ -150,7 +149,7 @@ ul {
 
 /* header */
 
- .main-header {
+.main-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -181,7 +180,7 @@ ul {
     text-shadow: 0 0 10px var(--primary-glow);
 }
 
- .nav-links {
+.nav-links {
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -200,7 +199,7 @@ ul {
     color: var(--primary-red);
 }
 
- .hamburger {
+.hamburger {
     display: none;
     cursor: pointer;
     flex-direction: column;
@@ -214,7 +213,7 @@ ul {
     transition: var(--transition);
 }
 
- .mobile-menu {
+.mobile-menu {
     position: fixed;
     top: 80px;
     right: -100%;
@@ -246,7 +245,7 @@ ul {
     color: var(--text-main);
 }
 
- #hamburger.active .bar:nth-child(2) {
+#hamburger.active .bar:nth-child(2) {
     opacity: 0;
 }
 
@@ -260,7 +259,7 @@ ul {
     background: var(--primary-red);
 }
 
- @media (max-width: 992px) {
+@media (max-width: 992px) {
     .nav-links {
         display: none;
     }
@@ -278,23 +277,28 @@ ul {
 
 
 
-/* footer */
+/* ================= FOOTER FIXED ================= */
 
 .main-footer {
     background-color: var(--bg-black);
-    padding: 80px 5% 20px;
+    padding: 80px 20px 20px;   /* changed from 5% → fixed */
     border-top: 1px solid var(--border-color);
-    display: grid;
+    width: 100%;
+    overflow: hidden;          /* prevent overflow */
 }
 
 .footer-container {
-    max-width: 1400px;
+    width: 100%;
+    max-width: 1500px;         /* reduced for better fit */
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 3rem;
-    padding-bottom: 50px;
+    gap: 2rem;                 /* reduced gap */
+    padding-bottom: 40px;
+    box-sizing: border-box;
 }
+
+/* ================= TEXT ================= */
 
 .footer-title {
     color: var(--text-main);
@@ -322,6 +326,8 @@ ul {
     margin: 1.5rem 0;
 }
 
+/* ================= LINKS ================= */
+
 .footer-links li {
     margin-bottom: 12px;
 }
@@ -337,31 +343,7 @@ ul {
     padding-left: 5px;
 }
 
-.system-status {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--surface-dark);
-    padding: 8px 15px;
-    border: 1px solid var(--border-color);
-    width: fit-content;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--status-secure);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--status-secure);
-    animation: pulse 2s infinite;
-}
-
-.status-text {
-    font-family: var(--font-main);
-    font-size: var(--text-xs);
-    color: var(--status-secure);
-    text-transform: uppercase;
-}
+/* ================= FORM ================= */
 
 .footer-form {
     display: flex;
@@ -374,7 +356,6 @@ ul {
     border: 1px solid var(--border-color);
     padding: 12px;
     color: var(--text-main);
-    font-family: var(--font-main);
 }
 
 .footer-input:focus {
@@ -382,32 +363,46 @@ ul {
     border-color: var(--primary-red);
 }
 
-.footer-bottom {
-    padding-top: 30px;
-}
-
-.bottom-flex {
-    text-align: center;
-    font-size: var(--text-xs);
-    color: var(--text-dim);
-    font-family: var(--font-main);
-}
+/* ================= SOCIAL ================= */
 
 .footer-socials {
     display: flex;
     gap: 20px;
     font-size: 1.2rem;
+    flex-wrap: wrap;
 }
 
 .footer-socials a:hover {
     color: var(--primary-red);
 }
 
-@media (max-width: 768px) {
+/* ================= BOTTOM ================= */
+
+.footer-bottom {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.bottom-flex {
+    font-size: var(--text-xs);
+    color: var(--text-dim);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet (iPad, Nest Hub, etc.) */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
     .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
-        max-width: none;
     }
 
     .footer-title::after {
@@ -415,17 +410,7 @@ ul {
         transform: translateX(-50%);
     }
 
-    .system-status {
-        margin: 0 auto;
-    }
-
-    .bottom-flex {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .footer-socials a{
-        margin: 0 auto;
+    .footer-socials {
+        justify-content: center;
     }
 }

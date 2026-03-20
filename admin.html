@@ -34,7 +34,6 @@
             </div>
 
             <nav class="menu">
-
                 <a href="#" onclick="showSection('dashboard')">
                     <i class="fas fa-chart-line"></i> Dashboard
                 </a>
@@ -46,11 +45,6 @@
                 <a href="#" onclick="showSection('user')">
                     <i class="fas fa-user-secret"></i> User Access Control
                 </a>
-
-                <!-- <a href="#" onclick="showSection('network')">
-                    <i class="fas fa-network-wired"></i> Network Activity
-                </a> -->
-
             </nav>
 
         </aside>
@@ -61,17 +55,15 @@
 
             <div class="topbar">
 
-                <!-- LEFT -->
                 <div class="topbar-left">
                     <div class="hamburger" onclick="toggleSidebar()">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-                    <h3>Dashboard</h3>
+                    <h3>Admin Dashboard</h3>
                 </div>
 
-                <!-- CENTER (SEARCH) -->
                 <div class="topbar-center">
                     <div class="search-box">
                         <i class="fas fa-search"></i>
@@ -79,16 +71,13 @@
                     </div>
                 </div>
 
-                <!-- RIGHT -->
                 <div class="topbar-right">
 
-                    <!-- NOTIFICATION -->
                     <div class="topbar-icon">
                         <i class="fas fa-bell"></i>
                         <span class="badge">3</span>
                     </div>
 
-                    <!-- PROFILE -->
                     <div class="profile-box">
                         <div class="profile-img">A</div>
                         <div class="profile-info">
@@ -97,7 +86,6 @@
                         </div>
                     </div>
 
-                    <!-- SETTINGS -->
 
                     <a href="index.html" class="topbar-icon">Exit</a>
 
@@ -110,7 +98,6 @@
 
                 <h2 class="section-title">Threat Monitoring</h2>
 
-                <!-- TOP CARDS -->
                 <div class="threat-cards">
 
                     <div class="threat-card critical">
@@ -130,7 +117,6 @@
 
                 </div>
 
-                <!-- TABLE -->
                 <div class="threat-table">
 
                     <table>
@@ -179,12 +165,10 @@
 
                 <h2 class="section-title">User Access Control</h2>
 
-                <!-- TOP ACTION BAR -->
                 <div class="user-actions">
                     <button class="btn-primary">+ Add User</button>
                 </div>
 
-                <!-- USER TABLE -->
                 <div class="user-table">
 
                     <table>
@@ -250,7 +234,6 @@
 
                 <h2 class="section-title">Network Activity</h2>
 
-                <!-- TOP STATS -->
                 <div class="network-cards">
 
                     <div class="net-card">
@@ -270,7 +253,6 @@
 
                 </div>
 
-                <!-- LIVE ACTIVITY -->
                 <div class="network-live">
 
                     <h3>Live Activity</h3>
@@ -283,7 +265,6 @@
 
                 </div>
 
-                <!-- TRAFFIC TABLE -->
                 <div class="network-table">
 
                     <table>
@@ -337,19 +318,20 @@
 
         const email = localStorage.getItem("userEmail");
 
-if(email){
-    document.querySelector(".profile-info p").textContent = email;
-}
+        if (email) {
+            document.querySelector(".profile-info p").textContent = email;
+        }
 
 
 
-function logout(){
-    localStorage.clear();
-    window.location.href = "index.html";
-}
+        function logout() {
+            localStorage.clear();
+            window.location.href = "index.html";
+        }
 
 
-        /* ================= HAMBURGER ================= */
+        /*  HAMBURGER  */
+
         function toggleSidebar() {
             const sidebar = document.querySelector("aside");
             const overlay = document.querySelector(".overlay");
@@ -361,36 +343,33 @@ function logout(){
         }
 
 
-        /* ================= SAME PAGE NAVIGATION ================= */
+        /*  SAME PAGE NAVIGATION  */
+
         let firstClick = true;
 
         function showSection(sectionId) {
 
             const sections = document.querySelectorAll('.page-section');
 
-            // First click → hide all sections
             if (firstClick) {
                 sections.forEach(sec => sec.style.display = 'none');
                 firstClick = false;
             }
 
-            // Hide all
             sections.forEach(sec => sec.style.display = 'none');
 
-            // Show selected
             document.getElementById(sectionId).style.display = 'block';
         }
 
 
-        /* ================= MENU ACTIVE + MOBILE CLOSE ================= */
+        /*  MENU ACTIVE + MOBILE CLOSE  */
+
         document.querySelectorAll('.menu a').forEach(link => {
             link.addEventListener('click', function () {
 
-                // Active highlight
                 document.querySelectorAll('.menu a').forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
 
-                // Close sidebar (mobile)
                 document.querySelector("aside").classList.remove("active");
                 document.querySelector(".overlay").classList.remove("active");
                 document.querySelector(".hamburger").classList.remove("active");
@@ -399,16 +378,14 @@ function logout(){
         });
 
 
-        /* ================= USER SECTION ================= */
+        /* USER SECTION */
 
-        // Delete user row
         document.querySelectorAll('.delete-btn').forEach(btn => {
             btn.addEventListener('click', function () {
                 this.closest('tr').remove();
             });
         });
 
-        // Block / Unblock toggle
         document.querySelectorAll('.block-btn').forEach(btn => {
             btn.addEventListener('click', function () {
                 let row = this.closest('tr');
@@ -427,7 +404,8 @@ function logout(){
         });
 
 
-        /* ================= NETWORK LIVE ACTIVITY ================= */
+        /*  NETWORK LIVE ACTIVITY  */
+
         const activityList = document.querySelector('.network-live ul');
 
         setInterval(() => {

@@ -2,17 +2,14 @@ const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelectorAll('.mobile-nav-links a');
 
-// Toggle Menu
-hamburger.addEventListener('click', () => {
+ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     mobileMenu.classList.toggle('active');
     
-    // Prevent scrolling when menu is open
-    document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : 'auto';
+     document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : 'auto';
 });
 
-// Close menu when a link is clicked
-navLinks.forEach(link => {
+ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         mobileMenu.classList.remove('active');
@@ -48,16 +45,13 @@ function autoSwap() {
     showSlide(next);
 }
 
-/* 🔥 FIXED TIMING */
-let slideInterval = setInterval(autoSwap, 3500);
+ let slideInterval = setInterval(autoSwap, 3500);
 
-/* MANUAL CONTROL */
-function currentSlide(index) {
+ function currentSlide(index) {
     clearInterval(slideInterval);
     showSlide(index);
 
-    /* 🔥 SAME TIMING (IMPORTANT) */
-    slideInterval = setInterval(autoSwap, 3500);
+     slideInterval = setInterval(autoSwap, 3500);
 }
 
 
@@ -100,7 +94,7 @@ document.querySelectorAll('.service-card').forEach(card => {
 /* section 3 */
 
 const counters = document.querySelectorAll('.counter');
-const speed = 200; // The lower the slower
+const speed = 200;  
 
 const startCounters = () => {
     counters.forEach(counter => {
@@ -108,8 +102,7 @@ const startCounters = () => {
             const target = +counter.getAttribute('data-target');
             const count = +counter.innerText;
 
-            // Lower inc to slow and higher to slow
-            const inc = target / speed;
+             const inc = target / speed;
 
             if (count < target) {
                 counter.innerText = Math.ceil(count + inc);
@@ -122,8 +115,7 @@ const startCounters = () => {
     });
 };
 
-// Intersection Observer to trigger when visible
-const statsObserver = new IntersectionObserver((entries) => {
+ const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
             startCounters();
@@ -147,8 +139,7 @@ const teamCards = document.querySelectorAll('.team-card');
 const teamObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            // Staggered fade in
-            setTimeout(() => {
+             setTimeout(() => {
                 entry.target.style.opacity = "1";
                 entry.target.style.transform = "translateY(0)";
             }, index * 150); 
@@ -191,14 +182,12 @@ function addLog() {
     
     consoleFeed.appendChild(p);
 
-    // Keep only the last 7 lines to prevent overflow
-    if (consoleFeed.children.length > 7) {
+     if (consoleFeed.children.length > 7) {
         consoleFeed.removeChild(consoleFeed.children[0]);
     }
 }
 
-// Trigger log updates every 2.5 seconds
-setInterval(addLog, 2500);
+ setInterval(addLog, 2500);
 
 
 
@@ -233,12 +222,10 @@ selectors.forEach(item => {
     item.addEventListener('click', () => {
         const index = item.getAttribute('data-index');
         
-        // Update Active Class
-        selectors.forEach(s => s.classList.remove('active'));
+         selectors.forEach(s => s.classList.remove('active'));
         item.classList.add('active');
 
-        // Trigger Glitch and Swap
-        quoteEl.classList.add('glitch-active');
+         quoteEl.classList.add('glitch-active');
         
         setTimeout(() => {
             quoteEl.innerText = testimonials[index].quote;
@@ -258,8 +245,7 @@ document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
         const item = question.parentElement;
         
-        // Close other items (Optional - remove if you want multiple open)
-        document.querySelectorAll('.faq-item').forEach(otherItem => {
+         document.querySelectorAll('.faq-item').forEach(otherItem => {
             if (otherItem !== item) otherItem.classList.remove('active');
         });
 

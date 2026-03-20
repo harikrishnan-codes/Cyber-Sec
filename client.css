@@ -1,52 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-:root {
-    /* Primary Branding */
-    --primary-red: rgb(244, 51, 52);
-    --primary-glow: rgba(244, 51, 52, 0.35);
-    --primary-muted: rgb(150, 30, 30);
-
-    /* Background & Surfaces */
-    --bg-black: rgb(18, 18, 18);
-    --surface-dark: rgb(32, 32, 32);
-    --surface-light: rgb(45, 45, 45);
-
-    /* Typography & Accents */
-    --font-main: 'Courier New', monospace;
-    --font-heading: 'Inter', sans-serif;
-    --text-main: rgb(240, 240, 240);
-    --text-dim: rgb(160, 160, 160);
-    --border-color: rgb(60, 60, 60);
-    --transition: 0.3s ease;
-
-    /* Typography Scale */
-    --text-xs: 0.75rem;
-    --text-sm: 0.875rem;
-    --text-md: 1rem;
-    --text-lg: 1.125rem;
-    --text-xl: 1.266rem;
-    --text-2xl: 1.424rem;
-    --text-3xl: 1.602rem;
-    --text-4xl: 1.802rem;
-    --text-hero: 2.5rem;
-
-    /* Buttons */
-    --btn-primary-bg: var(--primary-red);
-    --btn-primary-text: #ffffff;
-    --btn-primary-hover: rgb(200, 40, 40);
-    --btn-primary-shadow: rgba(244, 51, 52, 0.4);
-
-    --btn-secondary-bg: transparent;
-    --btn-secondary-border: var(--text-dim);
-    --btn-secondary-text: var(--text-main);
-    --btn-secondary-hover: rgba(255, 255, 255, 0.1);
-
-    /* Security Status */
-    --status-critical: var(--primary-red);
-    --status-warning: rgb(255, 165, 0);
-    --status-secure: rgb(0, 255, 120);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -59,9 +10,6 @@ body {
     color: #fff;
 }
 
-
-
-/* ================= PROFILE ================= */
 .profile-box {
     display: flex;
     align-items: center;
@@ -80,7 +28,6 @@ body {
     font-weight: bold;
 }
 
-/* TEXT */
 .profile-info p {
     font-size: 13px;
 }
@@ -90,36 +37,32 @@ body {
     color: var(--text-dim);
 }
 
-.topbar .topbar-icon{
+.topbar .topbar-icon {
     background-color: var(--text-main);
     padding: 10px 20px;
     color: var(--primary-red);
     border-radius: 100px;
 }
 
-.topbar .topbar-icon:hover{
+.topbar .topbar-icon:hover {
     color: var(--text-main);
     background-color: var(--primary-red);
 }
 
 
-/* Default: all visible */
 .page-section {
     display: block;
 }
 
-/* After click: hide all */
-.page-section.hide {
+ .page-section.hide {
     display: none;
 }
 
-/* ===== LAYOUT ===== */
-.dashboard {
+ .dashboard {
     display: flex;
 }
 
-/* ===== SIDEBAR ===== */
-aside {
+ aside {
     width: 260px;
     height: 100vh;
     position: fixed;
@@ -129,14 +72,12 @@ aside {
     overflow-y: auto;
 }
 
-/* TITLE */
-aside h2 {
+ aside h2 {
     color: var(--primary-red);
     margin-bottom: 25px;
 }
 
-/* CLIENT INFO */
-.client-info {
+ .client-info {
     background: var(--surface-dark);
     padding: 15px;
     border-radius: 10px;
@@ -153,13 +94,11 @@ aside h2 {
     color: var(--primary-red);
 }
 
-/* SECURE TEXT */
-.secure {
+ .secure {
     color: var(--status-secure);
 }
 
-/* ===== MENU ===== */
-.menu {
+ .menu {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -185,14 +124,12 @@ aside h2 {
     color: var(--primary-red);
 }
 
-/* ===== MAIN ===== */
-main {
+ main {
     margin-left: 260px;
     width: calc(100% - 260px);
 }
 
-/* ===== TOPBAR ===== */
-.topbar {
+ .topbar {
     height: 60px;
     background: var(--surface-dark);
     border-bottom: 1px solid var(--border-color);
@@ -202,8 +139,7 @@ main {
     padding: 0 15px;
 }
 
-/* LEFT */
-.topbar-left {
+ .topbar-left {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -213,16 +149,14 @@ main {
     color: var(--text-main);
 }
 
-/* RIGHT */
-.topbar-right {
+ .topbar-right {
     display: flex;
     align-items: center;
     gap: 15px;
     color: var(--text-dim);
 }
 
-/* ===== HAMBURGER ===== */
-.hamburger {
+ .hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -236,12 +170,11 @@ main {
     transition: 0.3s;
 }
 
-/* ===== OVERLAY ===== */
-.overlay {
+ .overlay {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     top: 0;
     left: 0;
     opacity: 0;
@@ -254,18 +187,12 @@ main {
     visibility: visible;
 }
 
-/* ===== SECTIONS ===== */
 .page-section {
     padding: 20px;
     background-color: var(--surface-light);
 }
 
 
-
-
-/* security section */
-
-/* ===== SECURITY CARDS ===== */
 .security-cards {
     display: flex;
     gap: 20px;
@@ -298,7 +225,6 @@ main {
     box-shadow: 0 0 10px var(--primary-glow);
 }
 
-/* ===== ACTIVITY BOX ===== */
 .security-activity {
     margin-top: 30px;
     background: var(--surface-dark);
@@ -321,12 +247,10 @@ main {
     margin-bottom: 8px;
 }
 
-/* IP highlight */
 .ip {
     color: var(--primary-red);
 }
 
-/* ===== MOBILE SAFE (768px) ===== */
 @media (max-width: 768px) {
 
     .security-cards {
@@ -346,7 +270,6 @@ main {
 
 
 
-/* ===== SUPPORT CARDS ===== */
 .support-cards {
     display: flex;
     gap: 20px;
@@ -384,7 +307,6 @@ main {
     box-shadow: 0 0 10px var(--primary-glow);
 }
 
-/* ===== TICKETS ===== */
 .support-tickets {
     margin-top: 30px;
     background: var(--surface-dark);
@@ -404,7 +326,6 @@ main {
     margin-bottom: 8px;
 }
 
-/* STATUS COLORS */
 .status.open {
     color: orange;
 }
@@ -417,7 +338,6 @@ main {
     color: var(--primary-red);
 }
 
-/* ===== FAQ ===== */
 .support-faq {
     margin-top: 30px;
     background: var(--surface-dark);
@@ -435,7 +355,6 @@ main {
     color: var(--text-dim);
 }
 
-/* ===== MOBILE (768px) ===== */
 @media (max-width: 768px) {
 
     .support-cards {
@@ -452,10 +371,6 @@ main {
 
 
 
-
-
-
-/* ===== SETTINGS BOX ===== */
 .settings-box {
     background: var(--surface-dark);
     border: 1px solid var(--border-color);
@@ -464,21 +379,18 @@ main {
     max-width: 500px;
 }
 
-/* EACH FIELD */
 .setting-item {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
 }
 
-/* LABEL */
 .setting-item label {
     font-size: 12px;
     color: var(--text-dim);
     margin-bottom: 5px;
 }
 
-/* INPUT */
 .setting-item input {
     padding: 8px 10px;
     border-radius: 5px;
@@ -488,7 +400,6 @@ main {
     outline: none;
 }
 
-/* BUTTONS */
 .btn-primary {
     background: var(--primary-red);
     color: var(--btn-primary-text);
@@ -515,12 +426,10 @@ main {
     background: var(--btn-secondary-hover);
 }
 
-/* SAVE BUTTON ALIGN */
 .save-btn {
     margin-top: 10px;
 }
 
-/* ===== MOBILE SAFE ===== */
 @media (max-width: 768px) {
 
     .settings-box {
@@ -531,13 +440,6 @@ main {
 }
 
 
-
-
-
-
-
-
-/* ===== CARDS ===== */
 .cards {
     display: flex;
     gap: 20px;
@@ -568,7 +470,6 @@ main {
     box-shadow: 0 0 15px var(--primary-glow);
 }
 
-/* ===== BOXES ===== */
 .status-box,
 .support-box,
 .settings-box {
@@ -592,15 +493,12 @@ button:hover {
     background: var(--btn-primary-hover);
 }
 
-/* ===== MOBILE (768px) ===== */
 @media (max-width: 768px) {
 
-    /* SHOW HAMBURGER */
     .hamburger {
         display: flex;
     }
 
-    /* SIDEBAR */
     aside {
         transform: translateX(-100%);
         z-index: 200;
@@ -611,18 +509,15 @@ button:hover {
         transform: translateX(0);
     }
 
-    /* MAIN */
     main {
         margin-left: 0;
         width: 100%;
     }
 
-    /* TOPBAR */
     .topbar {
         flex-direction: row;
     }
 
-    /* CARDS STACK */
     .cards {
         flex-direction: column;
     }

@@ -16,13 +16,11 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* LAYOUT */
 .auth-wrapper {
     display: flex;
     min-height: 100vh;
 }
 
-/* CARD */
 .auth-card {
     width: 50%;
     padding: 60px;
@@ -31,7 +29,6 @@ body {
     margin: auto;
 }
 
-/* TERMINAL */
 .terminal {
     width: 50%;
     background: black;
@@ -49,10 +46,11 @@ body {
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
-/* FORM */
 .form-section {
     display: none;
 }
@@ -79,7 +77,6 @@ input {
     color: white;
 }
 
-/* DROPDOWN */
 select {
     width: 100%;
     padding: 12px;
@@ -89,7 +86,6 @@ select {
     color: var(--text-main);
 }
 
-/* CHECKBOX */
 .checkbox-group {
     display: flex;
     align-items: center;
@@ -104,7 +100,6 @@ select {
 }
 
 
-/* PASSWORD ICON */
 .password-box i {
     position: absolute;
     right: 10px;
@@ -112,7 +107,6 @@ select {
     cursor: pointer;
 }
 
-/* BUTTON */
 .btn-primary {
     width: 100%;
     background: var(--primary-red);
@@ -122,7 +116,6 @@ select {
     cursor: pointer;
 }
 
-/* SWITCH TEXT */
 .switch-text {
     margin-top: 15px;
     font-size: 14px;
@@ -133,8 +126,7 @@ select {
     cursor: pointer;
 }
 
-/* MOBILE */
-@media(max-width:768px){
+@media(max-width:768px) {
     .auth-wrapper {
         flex-direction: column;
     }
