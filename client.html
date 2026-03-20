@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client</title>
+    <link rel="icon" href="./assets/bg remove.webp">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="client.css">
+    <link rel="stylesheet" href="./root.css">
+
+    <!-- material icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- aos animations -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside>
+            <h2>CyberShield</h2>
+
+            <div class="client-info">
+                <p>CLIENT_ID: <span>USR-78421</span></p>
+                <p>SECURITY_STATUS: <span class="secure">PROTECTED</span></p>
+                <p>SUBSCRIPTION: <span>PREMIUM</span></p>
+            </div>
+
+            <nav class="menu">
+
+                <a href="#" onclick="showSection('dashboard')">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </a>
+
+                <a href="#" onclick="showSection('security')">
+                    <i class="fas fa-shield-alt"></i> My Security
+                </a>
+
+                <a href="#" onclick="showSection('support')">
+                    <i class="fas fa-headset"></i> Support
+                </a>
+
+                <a href="#" onclick="showSection('settings')">
+                    <i class="fas fa-user-cog"></i> Settings
+                </a>
+
+            </nav>
+        </aside>
+
+        <div class="overlay" onclick="toggleSidebar()"></div>
+
+
+
+
+
+        <!-- MAIN -->
+        <main>
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+
+                <div class="topbar-left">
+                    <div class="hamburger" onclick="toggleSidebar()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <h3>Client Dashboard</h3>
+                </div>
+
+                <div class="topbar-right">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-user"></i>
+                </div>
+
+            </div>
+
+            <!-- DASHBOARD -->
+            <section class="page-section" id="dashboard">
+                <h2>Overview</h2>
+
+                <div class="cards">
+                    <div class="card">
+                        <h4>Threats Blocked</h4>
+                        <p>120</p>
+                    </div>
+
+                    <div class="card">
+                        <h4>Security Score</h4>
+                        <p>98%</p>
+                    </div>
+
+                    <div class="card">
+                        <h4>Active Devices</h4>
+                        <p>5</p>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+            <!-- SECURITY -->
+            <section class="page-section" id="security">
+
+                <h2 class="section-title">My Security Status</h2>
+
+                <!-- STATUS SUMMARY -->
+                <div class="status-box">
+                    <p>Your system is <span class="secure">Fully Protected</span></p>
+                </div>
+
+                <!-- SECURITY CARDS -->
+                <div class="security-cards">
+
+                    <div class="sec-card">
+                        <h4>Firewall Status</h4>
+                        <p class="secure">Active</p>
+                    </div>
+
+                    <div class="sec-card">
+                        <h4>Malware Protection</h4>
+                        <p class="secure">Enabled</p>
+                    </div>
+
+                    <div class="sec-card">
+                        <h4>Last Scan</h4>
+                        <p>Today, 10:30 AM</p>
+                    </div>
+
+                </div>
+
+                <!-- RECENT ACTIVITIES -->
+                <div class="security-activity">
+
+                    <h3>Recent Security Activity</h3>
+
+                    <ul>
+                        <li><span class="ip">192.168.1.10</span> → Threat Blocked</li>
+                        <li><span class="ip">45.22.11.78</span> → Suspicious Login Attempt</li>
+                        <li><span class="ip">103.45.23.90</span> → Scan Completed</li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+
+
+
+
+
+            <section class="page-section" id="support">
+
+                <h2 class="section-title">Support Center</h2>
+
+                <!-- SUPPORT ACTION -->
+                <div class="support-box">
+                    <p>Need help? Our support team is available 24/7.</p>
+                    <button class="btn-primary">Raise Ticket</button>
+                </div>
+
+                <!-- SUPPORT CARDS -->
+                <div class="support-cards">
+
+                    <div class="support-card">
+                        <i class="fas fa-headset"></i>
+                        <h4>Live Chat</h4>
+                        <p>Chat with our support team instantly.</p>
+                        <button>Start Chat</button>
+                    </div>
+
+                    <div class="support-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email Support</h4>
+                        <p>support@cybershield.com</p>
+                        <button>Send Email</button>
+                    </div>
+
+                    <div class="support-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Call Support</h4>
+                        <p>+91 98765 43210</p>
+                        <button>Call Now</button>
+                    </div>
+
+                </div>
+
+                <!-- RECENT TICKETS -->
+                <div class="support-tickets">
+
+                    <h3>Recent Tickets</h3>
+
+                    <ul>
+                        <li>#1023 - Login Issue <span class="status open">Open</span></li>
+                        <li>#1018 - Malware Alert <span class="status closed">Resolved</span></li>
+                        <li>#1009 - Account Help <span class="status pending">Pending</span></li>
+                    </ul>
+
+                </div>
+
+                <!-- FAQ -->
+                <div class="support-faq">
+
+                    <h3>FAQs</h3>
+
+                    <div class="faq-item">
+                        <p><strong>How to reset password?</strong></p>
+                        <span>Go to settings → Change password.</span>
+                    </div>
+
+                    <div class="faq-item">
+                        <p><strong>How to check threats?</strong></p>
+                        <span>Visit Security section for full report.</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+
+
+
+            <!-- SETTINGS -->
+            <section class="page-section" id="settings">
+
+                <h2 class="section-title">Account Settings</h2>
+
+                <div class="settings-box">
+
+                    <div class="setting-item">
+                        <label>Name</label>
+                        <input type="text" value="Hari Krishnan">
+                    </div>
+
+                    <div class="setting-item">
+                        <label>Email</label>
+                        <input type="email" value="user@email.com">
+                    </div>
+
+                    <div class="setting-item">
+                        <label>Password</label>
+                        <button class="btn-secondary">Change Password</button>
+                    </div>
+
+                    <button class="btn-primary save-btn">Save Changes</button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </section>
+
+    <script src="client.js"></script>
+
+    <script>
+
+        /* SIDEBAR TOGGLE */
+        function toggleSidebar() {
+            document.querySelector("aside").classList.toggle("active");
+            document.querySelector(".overlay").classList.toggle("active");
+        }
+
+        /* SAME PAGE NAVIGATION */
+        let firstClick = true;
+
+        function showSection(id) {
+
+            const sections = document.querySelectorAll(".page-section");
+
+            if (firstClick) {
+                sections.forEach(sec => sec.style.display = "none");
+                firstClick = false;
+            }
+
+            sections.forEach(sec => sec.style.display = "none");
+
+            document.getElementById(id).style.display = "block";
+        }
+
+        /* ACTIVE MENU */
+        document.querySelectorAll(".menu a").forEach(link => {
+            link.addEventListener("click", function () {
+
+                document.querySelectorAll(".menu a").forEach(l => l.classList.remove("active"));
+                this.classList.add("active");
+
+                // close mobile menu
+                document.querySelector("aside").classList.remove("active");
+                document.querySelector(".overlay").classList.remove("active");
+
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
