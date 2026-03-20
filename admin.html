@@ -88,11 +88,6 @@
                         <span class="badge">3</span>
                     </div>
 
-                    <!-- SETTINGS -->
-                    <div class="topbar-icon">
-                        <i class="fas fa-cog"></i>
-                    </div>
-
                     <!-- PROFILE -->
                     <div class="profile-box">
                         <div class="profile-img">A</div>
@@ -101,6 +96,10 @@
                             <span>Super Admin</span>
                         </div>
                     </div>
+
+                    <!-- SETTINGS -->
+
+                    <a href="index.html" class="topbar-icon">Exit</a>
 
                 </div>
             </div>
@@ -336,101 +335,115 @@
 
     <script>
 
-/* ================= HAMBURGER ================= */
-function toggleSidebar() {
-    const sidebar = document.querySelector("aside");
-    const overlay = document.querySelector(".overlay");
-    const burger = document.querySelector(".hamburger");
+        const email = localStorage.getItem("userEmail");
 
-    sidebar.classList.toggle("active");
-    overlay.classList.toggle("active");
-    burger.classList.toggle("active");
+if(email){
+    document.querySelector(".profile-info p").textContent = email;
 }
 
 
-/* ================= SAME PAGE NAVIGATION ================= */
-let firstClick = true;
 
-function showSection(sectionId) {
-
-    const sections = document.querySelectorAll('.page-section');
-
-    // First click → hide all sections
-    if (firstClick) {
-        sections.forEach(sec => sec.style.display = 'none');
-        firstClick = false;
-    }
-
-    // Hide all
-    sections.forEach(sec => sec.style.display = 'none');
-
-    // Show selected
-    document.getElementById(sectionId).style.display = 'block';
+function logout(){
+    localStorage.clear();
+    window.location.href = "index.html";
 }
 
 
-/* ================= MENU ACTIVE + MOBILE CLOSE ================= */
-document.querySelectorAll('.menu a').forEach(link => {
-    link.addEventListener('click', function () {
+        /* ================= HAMBURGER ================= */
+        function toggleSidebar() {
+            const sidebar = document.querySelector("aside");
+            const overlay = document.querySelector(".overlay");
+            const burger = document.querySelector(".hamburger");
 
-        // Active highlight
-        document.querySelectorAll('.menu a').forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-
-        // Close sidebar (mobile)
-        document.querySelector("aside").classList.remove("active");
-        document.querySelector(".overlay").classList.remove("active");
-        document.querySelector(".hamburger").classList.remove("active");
-
-    });
-});
-
-
-/* ================= USER SECTION ================= */
-
-// Delete user row
-document.querySelectorAll('.delete-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-        this.closest('tr').remove();
-    });
-});
-
-// Block / Unblock toggle
-document.querySelectorAll('.block-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-        let row = this.closest('tr');
-        let status = row.querySelector('td:nth-child(4)');
-
-        if (this.textContent === "Block") {
-            status.textContent = "Blocked";
-            status.className = "inactive";
-            this.textContent = "Unblock";
-        } else {
-            status.textContent = "Active";
-            status.className = "active";
-            this.textContent = "Block";
+            sidebar.classList.toggle("active");
+            overlay.classList.toggle("active");
+            burger.classList.toggle("active");
         }
-    });
-});
 
 
-/* ================= NETWORK LIVE ACTIVITY ================= */
-const activityList = document.querySelector('.network-live ul');
+        /* ================= SAME PAGE NAVIGATION ================= */
+        let firstClick = true;
 
-setInterval(() => {
-    const fakeIPs = ["192.168.1.10", "45.33.22.11", "103.21.45.67"];
-    const actions = ["Accessed Server", "Blocked Request", "Login Attempt"];
+        function showSection(sectionId) {
 
-    const li = document.createElement('li');
-    li.innerHTML = `<span class="ip">${fakeIPs[Math.floor(Math.random() * 3)]}</span> → ${actions[Math.floor(Math.random() * 3)]}`;
+            const sections = document.querySelectorAll('.page-section');
 
-    activityList.prepend(li);
+            // First click → hide all sections
+            if (firstClick) {
+                sections.forEach(sec => sec.style.display = 'none');
+                firstClick = false;
+            }
 
-    if (activityList.children.length > 5) {
-        activityList.removeChild(activityList.lastChild);
-    }
+            // Hide all
+            sections.forEach(sec => sec.style.display = 'none');
 
-}, 3000);
+            // Show selected
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+
+        /* ================= MENU ACTIVE + MOBILE CLOSE ================= */
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', function () {
+
+                // Active highlight
+                document.querySelectorAll('.menu a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                // Close sidebar (mobile)
+                document.querySelector("aside").classList.remove("active");
+                document.querySelector(".overlay").classList.remove("active");
+                document.querySelector(".hamburger").classList.remove("active");
+
+            });
+        });
+
+
+        /* ================= USER SECTION ================= */
+
+        // Delete user row
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                this.closest('tr').remove();
+            });
+        });
+
+        // Block / Unblock toggle
+        document.querySelectorAll('.block-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                let row = this.closest('tr');
+                let status = row.querySelector('td:nth-child(4)');
+
+                if (this.textContent === "Block") {
+                    status.textContent = "Blocked";
+                    status.className = "inactive";
+                    this.textContent = "Unblock";
+                } else {
+                    status.textContent = "Active";
+                    status.className = "active";
+                    this.textContent = "Block";
+                }
+            });
+        });
+
+
+        /* ================= NETWORK LIVE ACTIVITY ================= */
+        const activityList = document.querySelector('.network-live ul');
+
+        setInterval(() => {
+            const fakeIPs = ["192.168.1.10", "45.33.22.11", "103.21.45.67"];
+            const actions = ["Accessed Server", "Blocked Request", "Login Attempt"];
+
+            const li = document.createElement('li');
+            li.innerHTML = `<span class="ip">${fakeIPs[Math.floor(Math.random() * 3)]}</span> → ${actions[Math.floor(Math.random() * 3)]}`;
+
+            activityList.prepend(li);
+
+            if (activityList.children.length > 5) {
+                activityList.removeChild(activityList.lastChild);
+            }
+
+        }, 3000);
 
     </script>
 </body>

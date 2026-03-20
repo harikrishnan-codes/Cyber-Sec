@@ -61,6 +61,48 @@ body {
 
 
 
+/* ================= PROFILE ================= */
+.profile-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 35px;
+    height: 35px;
+    background: var(--primary-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* TEXT */
+.profile-info p {
+    font-size: 13px;
+}
+
+.profile-info span {
+    font-size: 11px;
+    color: var(--text-dim);
+}
+
+.topbar .topbar-icon{
+    background-color: var(--text-main);
+    padding: 10px 20px;
+    color: var(--primary-red);
+    border-radius: 100px;
+}
+
+.topbar .topbar-icon:hover{
+    color: var(--text-main);
+    background-color: var(--primary-red);
+}
+
+
 /* Default: all visible */
 .page-section {
     display: block;

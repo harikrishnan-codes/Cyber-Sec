@@ -146,45 +146,102 @@
 
     <script>
 
-        // SWITCH FORMS
-        function switchForm(formId) {
-            document.querySelectorAll('.form-section').forEach(f => {
-                f.classList.remove('active');
-            });
+ 
+    /* ================= SWITCH FORMS ================= */
+    function switchForm(formId) {
+        document.querySelectorAll('.form-section').forEach(f => {
+            f.classList.remove('active');
+        });
+        document.getElementById(formId).classList.add('active');
+    }
 
-            document.getElementById(formId).classList.add('active');
+    /* ================= PASSWORD TOGGLE ================= */
+    document.querySelectorAll('.toggle-password').forEach(icon => {
+        icon.addEventListener('click', () => {
+            const input = icon.previousElementSibling;
+
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        });
+    });
+
+    /* ================= PASSWORD MATCH ================= */
+    const passwords = document.querySelectorAll('#signup input[type="password"]');
+
+    passwords[1].addEventListener('input', () => {
+        if (passwords[0].value !== passwords[1].value) {
+            passwords[1].style.borderColor = "red";
+        } else {
+            passwords[1].style.borderColor = "green";
+        }
+    });
+
+    /* ================= SIGNUP LOGIC ================= */
+    const signupBtn = document.querySelector('#signup .btn-primary');
+
+    signupBtn.addEventListener('click', function () {
+
+        const name = document.querySelector('#signup input[type="text"]').value;
+        const email = document.querySelector('#signup input[type="email"]').value;
+        const password = passwords[0].value;
+        const confirmPassword = passwords[1].value;
+        const role = document.querySelector('#signup select').value;
+
+        if (!name || !email || !password || !confirmPassword || !role) {
+            alert("Fill all fields");
+            return;
         }
 
-        // PASSWORD TOGGLE
-        document.querySelectorAll('.toggle-password').forEach(icon => {
-            icon.addEventListener('click', () => {
-                const input = icon.previousElementSibling;
+        if (password !== confirmPassword) {
+            alert("Passwords not matching");
+            return;
+        }
 
-                if (input.type === "password") {
-                    input.type = "text";
-                    icon.classList.replace("fa-eye", "fa-eye-slash");
-                } else {
-                    input.type = "password";
-                    icon.classList.replace("fa-eye-slash", "fa-eye");
-                }
-            });
-        });
-        
+        // ✅ STORE
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userRole", role);
+        localStorage.setItem("userPassword", password);
 
+        alert("Signup Success ✅");
 
+        // 👉 Switch to login
+        switchForm('login');
+    });
 
+    /* ================= LOGIN LOGIC ================= */
+    const loginBtn = document.querySelector('#login .btn-primary');
 
+    loginBtn.addEventListener('click', function () {
 
+        const email = document.querySelector('#login input[type="email"]').value;
+        const password = document.querySelector('#login input[type="password"]').value;
 
-        const passwords = document.querySelectorAll('input[type="password"]');
+        const savedEmail = localStorage.getItem("userEmail");
+        const savedPassword = localStorage.getItem("userPassword");
+        const role = localStorage.getItem("userRole");
 
-passwords[1].addEventListener('input', () => {
-    if (passwords[0].value !== passwords[1].value) {
-        passwords[1].style.borderColor = "red";
-    } else {
-        passwords[1].style.borderColor = "green";
-    }
-});
+        if (email === savedEmail && password === savedPassword) {
+
+            alert("Login Success ✅");
+
+            // ✅ REDIRECT BASED ON ROLE
+            if (role === "Administrator") {
+                window.location.href = "admin.html";
+            } else {
+                window.location.href = "client.html";
+            }
+
+        } else {
+            alert("Invalid Login ❌");
+        }
+    });
+
+</script>
 
     </script>
 
