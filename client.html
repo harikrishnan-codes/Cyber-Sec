@@ -165,7 +165,7 @@
 
                  <div class="support-box">
                     <p>Need help? Our support team is available 24/7.</p>
-                    <button class="btn-primary">Raise Ticket</button>
+                    <button class="btn-primary" onclick="window.location.href='./404..html'">Raise Ticket</button>
                 </div>
 
                  <div class="support-cards">
@@ -174,21 +174,21 @@
                         <i class="fas fa-headset"></i>
                         <h4>Live Chat</h4>
                         <p>Chat with our support team instantly.</p>
-                        <button>Start Chat</button>
+                        <button onclick="window.location.href='./404..html'">Start Chat</button>
                     </div>
 
                     <div class="support-card">
                         <i class="fas fa-envelope"></i>
                         <h4>Email Support</h4>
                         <p>support@cybershield.com</p>
-                        <button>Send Email</button>
+                        <button onclick="window.location.href='./404..html'">Send Email</button>
                     </div>
 
                     <div class="support-card">
                         <i class="fas fa-phone"></i>
                         <h4>Call Support</h4>
                         <p>+91 98765 43210</p>
-                        <button>Call Now</button>
+                        <button onclick="window.location.href='./404..html'">Call Now</button>
                     </div>
 
                 </div>
@@ -233,16 +233,16 @@
 
                 <h2 class="section-title">Account Settings</h2>
 
-                <div class="settings-box">
+                <form class="settings-box" action="./404.html" method="get">
 
                     <div class="setting-item">
                         <label>Name</label>
-                        <input type="text" value="Hari Krishnan">
+                        <input type="text" value="Hari Krishnan" required>
                     </div>
 
                     <div class="setting-item">
                         <label>Email</label>
-                        <input type="email" value="user@email.com">
+                        <input type="email" value="user@email.com" required>
                     </div>
 
                     <div class="setting-item">
@@ -252,7 +252,7 @@
 
                     <button class="btn-primary save-btn">Save Changes</button>
 
-                </div>
+                </form>
 
             </section>
 

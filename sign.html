@@ -111,7 +111,7 @@
                     <input type="email" placeholder="ENTER REGISTERED EMAIL" required>
                 </div>
 
-                <button class="btn-primary">Send Reset Link</button>
+                <button class="btn-primary" type="submit">Send Reset Link</button>
 
                 <p class="switch-text">
                     Back to <span onclick="switchForm('login')">Login</span>
@@ -232,6 +232,38 @@
                 alert("Invalid Login ❌");
             }
         });
+
+
+
+
+
+
+
+
+
+/*  FORGOT PASSWORD → REDIRECT TO 404  */
+const forgotBtn = document.querySelector('#forgot .btn-primary');
+
+forgotBtn.addEventListener('click', function () {
+
+    const email = document.querySelector('#forgot input[type="email"]').value;
+    const savedEmail = localStorage.getItem("userEmail");
+
+    if (!email) {
+        alert("Please enter your registered email");
+        return;
+    }
+
+    if (email !== savedEmail) {
+        alert("Email not found ❌");
+        return;
+    }
+
+    alert("Reset link sent 📩");
+
+    // 👉 REDIRECT TO YOUR 404 PAGE
+    window.location.href = "./404..html";
+});
 
     </script>
 
